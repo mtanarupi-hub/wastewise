@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scan Item — WasteWise</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-inner">
+      <div class="logo-mark">W</div>
+      <div class="logo-text">WasteWise</div>
+    </div>
+  </header>
+
+  <!-- SCANNER SECTION -->
+  <section class="scanner-wrap">
+
+    <!-- State 1: Upload prompt -->
+    <div id="upload-state">
+      <p class="scanner-instruction">Take a photo of any household item and we will tell you exactly how to dispose of it.</p>
+
+      <label class="upload-box" for="photo-input">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#1a5c40" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+        <span class="upload-label">Tap to take a photo or upload one</span>
+        <input type="file" id="photo-input" accept="image/*" capture="environment" style="display:none" />
+      </label>
+    </div>
+
+    <!-- State 2: Preview + analyzing -->
+    <div id="preview-state" style="display:none">
+      <img id="preview-img" src="" alt="Scanned item" class="preview-img" />
+      <div id="analyzing-msg" class="analyzing-msg">Analyzing your item...</div>
+      <button id="rescan-btn" class="rescan-btn" style="display:none">Scan a different item</button>
+    </div>
+
+    <!-- State 3: Results -->
+    <div id="results-state" style="display:none">
+      <div class="result-card">
+        <div class="result-item-name" id="result-name"></div>
+        <div class="result-category" id="result-category"></div>
+      </div>
+
+      <div class="result-section">
+        <div class="result-section-title">Disposal rules</div>
+        <div class="result-rules" id="result-rules"></div>
+      </div>
+
+      <div class="result-section">
+        <div class="result-section-title">Where to drop off</div>
+        <div id="result-locations"></div>
+      </div>
+
+      <div class="result-actions">
+        <button class="action-btn primary" id="add-inventory-btn">Add to My Inventory</button>
+        <button class="action-btn secondary" id="rescan-btn-2">Scan another item</button>
+      </div>
+    </div>
+
+    <!-- Error state -->
+    <div id="error-state" style="display:none">
+      <div class="error-msg" id="error-msg"></div>
+      <button class="rescan-btn" id="error-retry-btn">Try again</button>
+    </div>
+
+  </section>
+
+  <!-- BOTTOM NAV -->
+  <nav class="bottom-nav">
+    <a href="index.html" class="nav-item">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      <span>Home</span>
+    </a>
+    <a href="scanner.html" class="nav-item active">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+      <span>Scan</span>
+    </a>
+    <a href="inventory.html" class="nav-item">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+      <span>Inventory</span>
+    </a>
+    <a href="map.html" class="nav-item">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+      <span>Map</span>
+    </a>
+    <a href="info.html" class="nav-item">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+      <span>Info</span>
+    </a>
+  </nav>
+
+  <script src="js/scanner.js"></script>
+</body>
+</html>
