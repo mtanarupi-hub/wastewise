@@ -1,5 +1,6 @@
 import os
 import json
+import time
 import base64
 from flask import Flask, request, jsonify
 from flask_cors import CORS
@@ -12,7 +13,25 @@ app = Flask(__name__)
 CORS(app)
 
 client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
-MODEL = "gemini-flash-latest"
+
+# Try the main model first, fall back to the lighter one if Gemini is overloaded
+MODELS = ["gemini-flash-latest", "gemini-flash-lite-latest"]
+
+
+def generate(contents):
+    last_error = None
+    for model in MODELS:
+        for attempt in range(3):
+            try:
+                return client.models.generate_content(model=model, contents=contents)
+            except Exception as e:
+                last_error = e
+                if "503" in str(e) or "UNAVAILABLE" in str(e):
+                    time.sleep(2 ** attempt)
+                    continue
+                raise
+    raise last_error
+
 
 # Load disposal data from the JSON file sitting next to this script
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -48,15 +67,12 @@ Respond with ONLY raw JSON, no markdown, no backticks, in this exact shape:
 {{"item_name": "short name of the item", "category": "one_of_the_keys_above", "confidence": "high or medium or low", "reason": "one short sentence"}}"""
 
     try:
-        response = client.models.generate_content(
-            model=MODEL,
-            contents=[{
-                "parts": [
-                    {"text": prompt},
-                    {"inline_data": {"mime_type": "image/jpeg", "data": image_b64}}
-                ]
-            }]
-        )
+        response = generate([{
+            "parts": [
+                {"text": prompt},
+                {"inline_data": {"mime_type": "image/jpeg", "data": image_b64}}
+            ]
+        }])
 
         raw = response.text.strip()
         raw = raw.replace("```json", "").replace("```", "").strip()
@@ -114,10 +130,7 @@ DISPOSAL DATA:
 QUESTION: {question}"""
 
     try:
-        response = client.models.generate_content(
-            model=MODEL,
-            contents=prompt
-        )
+        response = generate(prompt)
         return jsonify({"answer": response.text.strip()})
     except Exception as e:
         print("ASK ERROR:", e)
