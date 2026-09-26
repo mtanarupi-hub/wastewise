@@ -121,7 +121,7 @@ QUESTION: {question}"""
         return jsonify({"answer": response.text.strip()})
     except Exception as e:
         print("ASK ERROR:", e)
-        return jsonify({"error": str(e)}), 500
+        return jsonify({"answer": "Sorry, something went wrong. Please try again."}), 500
 
 
 @app.route("/categories", methods=["GET"])
