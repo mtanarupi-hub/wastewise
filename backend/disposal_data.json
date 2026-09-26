@@ -1,0 +1,157 @@
+{
+  "categories": {
+    "rechargeable_batteries": {
+      "display_name": "Rechargeable Batteries",
+      "rules_summary": "Must go to HHW drop-off events. Do NOT throw in trash or curbside bin. Tape each terminal or bag each battery individually before transport.",
+      "accepted": ["Rechargeable batteries", "Button cell batteries", "Lithium batteries"],
+      "not_accepted": ["Alkaline batteries — regular trash is OK"],
+      "nuances": ["Prevents fires — never throw in trash", "Tape each terminal before transport"],
+      "locations": [
+        {
+          "name": "MCIA HHW Drop-Off Event",
+          "address": "290 Davidson Ave, Somerset, NJ 08873",
+          "lat": 40.5165,
+          "lng": -74.4815,
+          "hours": "Check mcia.org for upcoming event dates",
+          "residents_only": true
+        }
+      ]
+    },
+    "paint": {
+      "display_name": "Paint & Stains",
+      "rules_summary": "Bring to HHW events. All items must be labeled. Dried latex paint can go in regular trash. No business-generated material.",
+      "accepted": ["Latex paint", "Oil-based paint", "Stains", "Varnishes", "Lacquers", "Thinners", "Spray paint", "Driveway sealer"],
+      "not_accepted": ["Empty containers", "Dried-out latex paint", "Contractor or business material"],
+      "nuances": ["All items must be labeled", "Dried latex paint is OK for regular trash"],
+      "locations": [
+        {
+          "name": "MCIA HHW Drop-Off Event",
+          "address": "290 Davidson Ave, Somerset, NJ 08873",
+          "lat": 40.5165,
+          "lng": -74.4815,
+          "hours": "Check mcia.org for upcoming event dates",
+          "residents_only": true
+        }
+      ]
+    },
+    "tires": {
+      "display_name": "Tires",
+      "rules_summary": "Maximum 4 tires per household per month. Residents only — no businesses. Must see an attendant before unloading your vehicle. Automobile and light truck tires only.",
+      "accepted": ["Automobile tires", "Light truck tires"],
+      "not_accepted": ["Oversized tires", "Business tires"],
+      "nuances": ["4 tires per household per month maximum", "Must see attendant before unloading", "Proof of residency may be required"],
+      "locations": [
+        {
+          "name": "MCIA Tire Drop-Off",
+          "address": "290 Davidson Ave, Somerset, NJ 08873",
+          "lat": 40.5165,
+          "lng": -74.4815,
+          "hours": "Check mcia.org for upcoming event dates",
+          "residents_only": true
+        }
+      ]
+    },
+    "medicine": {
+      "display_name": "Medicine & Medications",
+      "rules_summary": "Never flush medications — they contaminate waterways. Use designated drug take-back drop-off locations at pharmacies and police stations across Middlesex County.",
+      "accepted": ["Prescription medications", "Over-the-counter medications", "Vitamins"],
+      "not_accepted": ["Needles and syringes — separate sharps disposal required"],
+      "nuances": ["Flushing medications contaminates waterways", "Many Middlesex County pharmacies and police stations have drop boxes"],
+      "locations": [
+        {
+          "name": "Middlesex County Drug Take-Back Locations",
+          "address": "Multiple locations — visit middlesexcountynj.gov for full list",
+          "lat": 40.5018,
+          "lng": -74.4454,
+          "hours": "Varies by location",
+          "residents_only": false
+        }
+      ]
+    },
+    "household_hazardous_waste": {
+      "display_name": "Household Hazardous Waste",
+      "rules_summary": "Bring to HHW events only. Never pour down drain, on ground, or into storm sewers. Put materials in trunk or truck bed and remain in your vehicle at events.",
+      "accepted": ["Adhesives", "Aerosol cans", "Antifreeze", "Brake fluid", "Car batteries", "Cleaners", "Drain cleaners", "Fire extinguishers", "Fluorescent bulbs", "Gasoline", "Kerosene", "Motor oil", "Paint", "Pesticides", "Pool chemicals", "Propane tanks", "Thermometers", "Thermostats"],
+      "not_accepted": ["Appliances", "Furniture", "Computers", "Electronics", "Empty containers", "Explosives", "Medical waste", "Smoke detectors", "TVs", "Tires", "Containers over 10 gallons"],
+      "nuances": ["Remain in your vehicle at events", "Asbestos must be pre-registered and double bagged", "Alkaline batteries OK for regular trash"],
+      "locations": [
+        {
+          "name": "MCIA HHW Drop-Off Event",
+          "address": "290 Davidson Ave, Somerset, NJ 08873",
+          "lat": 40.5165,
+          "lng": -74.4815,
+          "hours": "Check mcia.org for upcoming event dates",
+          "residents_only": true
+        }
+      ]
+    },
+    "electronics": {
+      "display_name": "Electronics (E-Waste)",
+      "rules_summary": "Recycling of computers, monitors, TVs, printers, and fax machines is required by NJ State Law. Contact your local public works department for your municipality's program.",
+      "accepted": ["Computers", "Monitors", "TVs", "Printers", "Fax machines", "Phones", "Tablets"],
+      "not_accepted": [],
+      "nuances": ["Required by NJ State Law", "Most municipalities have their own program", "Check with your town's public works department"],
+      "locations": [
+        {
+          "name": "Contact Your Local Municipality",
+          "address": "Visit middlesexcountynj.gov for your town's program",
+          "lat": 40.5018,
+          "lng": -74.4454,
+          "hours": "Varies by municipality",
+          "residents_only": true
+        }
+      ]
+    },
+    "textiles": {
+      "display_name": "Textiles & Clothing",
+      "rules_summary": "Every resident and business in Middlesex County is required to recycle textiles. Do NOT put in curbside recycling bin. Use donation boxes or pickup services.",
+      "accepted": ["Clean dry clothing", "Fabric items at least 1ft x 1ft"],
+      "not_accepted": ["Wet or moldy items", "Items smaller than 1ft x 1ft"],
+      "nuances": ["Required by law for residents AND businesses", "Clothing does not need to be in perfect condition", "Hundreds of donation boxes across Middlesex County"],
+      "locations": [
+        {
+          "name": "Donation Boxes Across Middlesex County",
+          "address": "Hundreds of locations — check Planet Aid, Goodwill, and local churches",
+          "lat": 40.5018,
+          "lng": -74.4454,
+          "hours": "Available 24/7 at most locations",
+          "residents_only": false
+        }
+      ]
+    },
+    "cooking_oil": {
+      "display_name": "Cooking Oil",
+      "rules_summary": "Middlesex County residents only — proof of residency required. Liquid vegetable oils only. Must see an attendant before unloading.",
+      "accepted": ["Liquid vegetable oils", "Olive oil", "Canola oil"],
+      "not_accepted": ["Shortening", "Coconut oil", "Lard", "Motor oil"],
+      "nuances": ["Proof of residency required", "No businesses", "Must see attendant before unloading"],
+      "locations": [
+        {
+          "name": "MCIA Cooking Oil Drop-Off",
+          "address": "290 Davidson Ave, Somerset, NJ 08873",
+          "lat": 40.5165,
+          "lng": -74.4815,
+          "hours": "Check mcia.org for upcoming event dates",
+          "residents_only": true
+        }
+      ]
+    },
+    "paper_shredding": {
+      "display_name": "Paper Shredding",
+      "rules_summary": "Residential personal paper only — no business documents. Bring in a box or crate, no plastic bags. Maximum 5 file boxes or 100 lbs per vehicle. Shredding done on-site.",
+      "accepted": ["Personal documents", "Paper with paper clips and staples"],
+      "not_accepted": ["Plastic binders", "Sheet protectors", "Newspapers", "Magazines", "Hardcover books", "Junk mail", "Photos", "X-rays", "CDs", "Shredded paper"],
+      "nuances": ["Stay in your vehicle during the visit", "Containers will be returned to you", "Paper clips and staples can stay in"],
+      "locations": [
+        {
+          "name": "MCIA Paper Shredding Event",
+          "address": "290 Davidson Ave, Somerset, NJ 08873",
+          "lat": 40.5165,
+          "lng": -74.4815,
+          "hours": "Check mcia.org for upcoming event dates",
+          "residents_only": true
+        }
+      ]
+    }
+  }
+}
