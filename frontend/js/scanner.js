@@ -11,7 +11,6 @@ photoInput.addEventListener('change', function(e) {
   const file = e.target.files[0];
   if (!file) return;
 
-  // Show preview
   const reader = new FileReader();
   reader.onload = function(ev) {
     previewImg.src = ev.target.result;
@@ -26,7 +25,7 @@ async function analyzeImage(base64DataUrl) {
   analyzingMsg.style.display = 'block';
 
   try {
-    const response = await fetch('http://localhost:5000/scan', {
+    const response = await fetch('http://127.0.0.1:5000/scan', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ image: base64DataUrl })
@@ -38,6 +37,7 @@ async function analyzeImage(base64DataUrl) {
     showResults(data);
 
   } catch (err) {
+    console.error(err);
     showState('error');
     document.getElementById('error-msg').textContent =
       'Something went wrong analyzing your item. Make sure the backend is running and try again.';
@@ -46,13 +46,24 @@ async function analyzeImage(base64DataUrl) {
 
 // Display results
 function showResults(data) {
-  document.getElementById('result-name').textContent = data.item_name;
-  document.getElementById('result-category').textContent = 'Category: ' + data.category;
-  document.getElementById('result-rules').textContent = data.rules_summary;
-
-  // Build location cards
+  const addBtn = document.getElementById('add-inventory-btn');
   const locContainer = document.getElementById('result-locations');
   locContainer.innerHTML = '';
+
+  document.getElementById('result-name').textContent = data.item_name || 'Unknown item';
+
+  // Item is not in any special disposal category (e.g. cardboard)
+  if (!data.found) {
+    document.getElementById('result-category').textContent = 'Category: Regular recycling or trash';
+    document.getElementById('result-rules').textContent = data.message;
+    locContainer.innerHTML = '<div class="result-rules">No special drop-off needed.</div>';
+    addBtn.style.display = 'none';
+    showState('results');
+    return;
+  }
+
+  document.getElementById('result-category').textContent = 'Category: ' + data.display_name;
+  document.getElementById('result-rules').textContent = data.rules_summary;
 
   if (data.locations && data.locations.length > 0) {
     data.locations.forEach(loc => {
@@ -61,22 +72,23 @@ function showResults(data) {
       card.innerHTML = `
         <div class="location-name">${loc.name}</div>
         <div class="location-address">${loc.address}</div>
-        <div class="location-hours">${loc.hours}</div>
-        <button class="directions-btn" onclick="openDirections('${loc.address}')">Get directions</button>
+        <div class="location-hours">${loc.hours || ''}</div>
+        <button class="directions-btn">Get directions</button>
       `;
+      card.querySelector('.directions-btn').onclick = () => openDirections(loc.address);
       locContainer.appendChild(card);
     });
   } else {
     locContainer.innerHTML = '<div class="result-rules">Contact your local municipality for drop-off options.</div>';
   }
 
-  showState('results');
-
-  // Save to inventory
-  document.getElementById('add-inventory-btn').onclick = function() {
+  addBtn.style.display = 'block';
+  addBtn.onclick = function() {
     saveToInventory(data);
     alert('Added to your inventory!');
   };
+
+  showState('results');
 }
 
 // Open Google Maps directions
@@ -91,7 +103,8 @@ function saveToInventory(data) {
   inventory.push({
     id: Date.now(),
     item_name: data.item_name,
-    category: data.category,
+    category: data.display_name,
+    category_key: data.category_key,
     rules_summary: data.rules_summary,
     locations: data.locations,
     date_scanned: new Date().toLocaleDateString(),
@@ -109,10 +122,7 @@ function showState(state) {
 
   if (state === 'upload') uploadState.style.display = 'block';
   if (state === 'preview') previewState.style.display = 'block';
-  if (state === 'results') {
-    previewState.style.display = 'none';
-    resultsState.style.display = 'block';
-  }
+  if (state === 'results') resultsState.style.display = 'block';
   if (state === 'error') errorState.style.display = 'block';
 }
 

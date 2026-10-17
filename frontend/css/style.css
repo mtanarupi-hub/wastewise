@@ -737,3 +737,33 @@
   font-weight: 500;
   cursor: pointer;
 }
+/* ---------- Reminders page ---------- */
+.notif-header { display: flex; align-items: center; gap: 12px; padding: 20px 16px 8px; }
+.notif-header h1 { margin: 0; font-size: 1.5rem; color: #1a5c40; }
+.notif-back { color: #1a5c40; display: flex; }
+.notif-main { padding: 0 16px 100px; max-width: 600px; margin: 0 auto; }
+.notif-settings { background: #fff; border: 1px solid #e3ebe6; border-radius: 12px; padding: 4px 16px; margin-bottom: 8px; }
+.notif-row { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 12px 0; }
+.notif-row + .notif-row { border-top: 1px solid #eef3f0; }
+.notif-label { font-weight: 600; color: #1f2d27; }
+.notif-sub { font-size: 0.85rem; color: #6b7c74; margin-top: 2px; }
+.notif-btn { background: #1a5c40; color: #fff; border: none; border-radius: 8px; padding: 8px 14px; font-weight: 600; font-family: inherit; cursor: pointer; }
+.notif-btn:disabled { background: #b9cbc2; cursor: default; }
+.notif-btn.secondary { background: #fff; color: #1a5c40; border: 1px solid #1a5c40; }
+#freq { padding: 8px; border-radius: 8px; border: 1px solid #cfdcd5; font: inherit; }
+.notif-heading { font-size: 1rem; color: #1f2d27; margin: 20px 0 10px; display: flex; align-items: center; gap: 8px; }
+.notif-count { background: #c0392b; color: #fff; border-radius: 999px; font-size: 0.75rem; padding: 2px 8px; }
+.notif-card { background: #fff; border: 1px solid #e3ebe6; border-left: 4px solid #1a5c40; border-radius: 12px; padding: 14px 16px; margin-bottom: 10px; }
+.notif-card.overdue { border-left-color: #c0392b; }
+.notif-card-top { display: flex; justify-content: space-between; gap: 8px; }
+.notif-item { font-weight: 600; color: #1f2d27; }
+.notif-when { font-size: 0.8rem; color: #6b7c74; white-space: nowrap; }
+.notif-card.overdue .notif-when { color: #c0392b; font-weight: 600; }
+.notif-cat { font-size: 0.85rem; color: #6b7c74; margin: 4px 0 10px; }
+.notif-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+.notif-actions .notif-btn { padding: 6px 12px; font-size: 0.85rem; }
+.notif-empty { text-align: center; color: #6b7c74; padding: 40px 16px; }
+
+/* ---------- Reminder bell (homepage) ---------- */
+.reminder-bell { position: fixed; top: 14px; right: 16px; width: 42px; height: 42px; border-radius: 50%; background: #fff; color: #1a5c40; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0,0,0,0.12); z-index: 1000; }
+.reminder-badge { position: absolute; top: -2px; right: -2px; min-width: 18px; height: 18px; padding: 0 5px; border-radius: 9px; background: #c0392b; color: #fff; font-size: 0.7rem; font-weight: 700; display: none; align-items: center; justify-content: center; }
