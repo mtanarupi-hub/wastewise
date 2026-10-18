@@ -767,3 +767,20 @@
 /* ---------- Reminder bell (homepage) ---------- */
 .reminder-bell { position: fixed; top: 14px; right: 16px; width: 42px; height: 42px; border-radius: 50%; background: #fff; color: #1a5c40; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0,0,0,0.12); z-index: 1000; }
 .reminder-badge { position: absolute; top: -2px; right: -2px; min-width: 18px; height: 18px; padding: 0 5px; border-radius: 9px; background: #c0392b; color: #fff; font-size: 0.7rem; font-weight: 700; display: none; align-items: center; justify-content: center; }
+/* ---------- Logo ---------- */
+.logo-img {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 10px;
+  padding: 4px;
+  display: block;
+}
+.hero-logo {
+  display: block;
+  width: 160px;
+  max-width: 60%;
+  height: auto;
+  margin: 0 auto 16px;
+}
