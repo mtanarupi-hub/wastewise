@@ -6,6 +6,13 @@
   <title>My Inventory | WasteWise</title>
   <link rel="stylesheet" href="css/style.css" />
   <link rel="icon" type="image/png" href="images/logo.png" />
+  <meta name="theme-color" content="#0b7a39" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="WasteWise" />
+  <link rel="manifest" href="/manifest.json" />
+  <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
 </head>
 <body>
 
@@ -22,14 +29,14 @@
       <button class="clear-btn" id="clear-done-btn">Clear disposed</button>
     </div>
 
-    <!-- Filter tabs -->
+
     <div class="filter-tabs">
       <button class="filter-tab active" data-filter="pending">Pending</button>
       <button class="filter-tab" data-filter="done">Disposed</button>
       <button class="filter-tab" data-filter="all">All</button>
     </div>
 
-    <!-- Empty state -->
+
     <div class="empty-state" id="empty-state" style="display:none">
       
       <div class="empty-title">Nothing here yet</div>
@@ -37,7 +44,7 @@
       <a href="scanner.html" class="scan-btn" style="margin-top:16px;display:inline-block">Scan an item</a>
     </div>
 
-    <!-- Inventory list -->
+
     <div id="inventory-list"></div>
   </section>
 
@@ -63,5 +70,6 @@
 
   <script src="js/reminders.js"></script>
   <script src="js/inventory.js"></script>
+  <script>if ('serviceWorker' in navigator) navigator.serviceWorker.register('/sw.js');</script>
 </body>
 </html>

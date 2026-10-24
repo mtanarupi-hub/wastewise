@@ -6,7 +6,6 @@ const errorState = document.getElementById('error-state');
 const previewImg = document.getElementById('preview-img');
 const analyzingMsg = document.getElementById('analyzing-msg');
 
-// When user picks a photo: shrink it first so the server doesn't run out of memory
 photoInput.addEventListener('change', function(e) {
   const file = e.target.files[0];
   if (!file) return;
@@ -32,7 +31,6 @@ photoInput.addEventListener('change', function(e) {
   reader.readAsDataURL(file);
 });
 
-// Send image to backend
 async function analyzeImage(base64DataUrl) {
   analyzingMsg.style.display = 'block';
 
@@ -56,7 +54,6 @@ async function analyzeImage(base64DataUrl) {
   }
 }
 
-// Display results
 function showResults(data) {
   const addBtn = document.getElementById('add-inventory-btn');
   const locContainer = document.getElementById('result-locations');
@@ -64,7 +61,6 @@ function showResults(data) {
 
   document.getElementById('result-name').textContent = data.item_name || 'Unknown item';
 
-  // Item is not in any special disposal category (e.g. cardboard)
   if (!data.found) {
     document.getElementById('result-category').textContent = 'Category: Regular recycling or trash';
     document.getElementById('result-rules').textContent = data.message;
@@ -103,7 +99,6 @@ function showResults(data) {
   showState('results');
 }
 
-// Save item to localStorage inventory
 function saveToInventory(data) {
   const inventory = JSON.parse(localStorage.getItem('wastewise-inventory') || '[]');
   inventory.push({
@@ -119,7 +114,6 @@ function saveToInventory(data) {
   localStorage.setItem('wastewise-inventory', JSON.stringify(inventory));
 }
 
-// Switch between UI states
 function showState(state) {
   uploadState.style.display = 'none';
   previewState.style.display = 'none';
@@ -132,6 +126,5 @@ function showState(state) {
   if (state === 'error') errorState.style.display = 'block';
 }
 
-// Rescan buttons
 document.getElementById('rescan-btn-2').onclick = () => showState('upload');
 document.getElementById('error-retry-btn').onclick = () => showState('upload');

@@ -35,7 +35,6 @@ def generate(contents):
     raise last_error
 
 
-# Load disposal data from the JSON file sitting next to this script
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 with open(os.path.join(BASE_DIR, "disposal_data.json"), "r", encoding="utf-8") as f:
     DISPOSAL_DATA = json.load(f)
@@ -131,7 +130,6 @@ def scan():
     if not image_b64:
         return jsonify({"error": "No image provided"}), 400
 
-    # Strip the data-url prefix if the frontend sent one
     if "," in image_b64:
         image_b64 = image_b64.split(",", 1)[1]
 
@@ -211,7 +209,6 @@ def ask():
 @app.route("/")
 def home():
     return app.send_static_file("index.html")
-
 
 @app.route("/categories", methods=["GET"])
 def categories():

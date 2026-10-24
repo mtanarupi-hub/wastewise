@@ -1,9 +1,3 @@
-/* =========================================================
-   WasteWise shared styles
-   Palette is built from the logo green (#0b7a39) only.
-   Type: Fredoka, four sizes.
-   ========================================================= */
-
 @import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&display=swap");
 
 :root {
@@ -41,7 +35,7 @@
   --page: 560px;
 }
 
-/* ---------- Base ---------- */
+
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
@@ -65,7 +59,7 @@ img, svg { display: block; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
 
-/* ---------- Buttons ---------- */
+
 .scan-btn, .action-btn, .rescan-btn, .directions-btn, .clear-btn, .chat-send-btn, .notif-btn {
   display: inline-flex;
   align-items: center;
@@ -94,7 +88,7 @@ img, svg { display: block; }
 .action-btn.secondary:hover, .rescan-btn:hover, .clear-btn:hover,
 .notif-btn.secondary:hover { background: var(--sage); }
 
-/* ---------- Header ---------- */
+
 .header { padding: var(--s4) var(--s4) var(--s3); background: var(--paper); }
 .header-inner {
   display: flex;
@@ -123,7 +117,7 @@ img, svg { display: block; }
 .logo-text { font-size: var(--t-title); font-weight: 600; color: var(--forest); letter-spacing: -0.01em; }
 .tagline { max-width: var(--page); margin: var(--s1) auto 0; font-size: var(--t-small); color: var(--ink-soft); }
 
-/* ---------- Home: green band ---------- */
+
 .home-band {
   position: relative;
   overflow: hidden;
@@ -165,7 +159,7 @@ img, svg { display: block; }
   border: 2px solid var(--forest);
 }
 
-/* ---------- Home: scan panel ---------- */
+
 .hero { position: relative; z-index: 1; max-width: calc(var(--page) + 32px); margin: -64px auto 0; padding: 0 var(--s4); }
 .hero-panel {
   display: flex;
@@ -189,7 +183,7 @@ img, svg { display: block; }
 .hero-or { font-size: var(--t-small); color: var(--ink-soft); margin-top: 2px; }
 .hero .scan-btn { margin-top: var(--s3); padding: 12px 22px; font-size: var(--t-body); }
 
-/* ---------- Home: sections ---------- */
+
 .home-section { max-width: calc(var(--page) + 32px); margin: 0 auto; padding: var(--s6) var(--s4) 0; }
 .section-title { font-size: var(--t-title); font-weight: 600; color: var(--ink); line-height: 1.25; }
 
@@ -221,7 +215,7 @@ a.status-row:hover .status-head { color: var(--leaf); }
 .status-body a { color: var(--leaf); text-decoration: underline; text-underline-offset: 2px; }
 .status-due { color: var(--alert); font-weight: 500; }
 
-/* Category grid */
+
 .cat-group { margin-top: var(--s5); }
 .cat-group-title { font-weight: 500; color: var(--ink); }
 .cat-group-note { font-size: var(--t-small); color: var(--ink-soft); }
@@ -247,7 +241,7 @@ a.status-row:hover .status-head { color: var(--leaf); }
 .cat-btn.everyday .cat-icon { background: var(--mist); color: var(--leaf); }
 .cat-btn.everyday:hover { background: var(--mist); }
 
-/* First-time steps */
+
 .how-list { list-style: none; margin-top: var(--s4); display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--s4) var(--s5); }
 .how-list li { display: flex; gap: var(--s3); font-size: var(--t-small); color: var(--ink-soft); }
 .how-list strong { display: block; font-size: var(--t-body); font-weight: 500; color: var(--ink); }
@@ -266,7 +260,7 @@ a.status-row:hover .status-head { color: var(--leaf); }
 .why-band p { max-width: var(--page); margin: 0 auto; font-size: var(--t-small); color: var(--ink-soft); }
 .why-band strong { display: block; font-size: var(--t-body); font-weight: 500; color: var(--forest); margin-bottom: var(--s1); }
 
-/* ---------- Bottom nav ---------- */
+
 .bottom-nav {
   position: fixed;
   left: 0; right: 0; bottom: 0;
@@ -298,13 +292,13 @@ a.status-row:hover .status-head { color: var(--leaf); }
 .nav-item.active svg { width: 52px; height: 30px; padding: 4px 15px; border-radius: var(--r-pill); background: var(--sage); }
 .nav-item:not(.active) svg { margin: 4px 0; }
 
-/* ---------- Inner pages ---------- */
+
 .scanner-wrap, .page-wrap { max-width: calc(var(--page) + 32px); margin: 0 auto; padding: var(--s3) var(--s4) var(--s5); }
 .page-title-row { display: flex; align-items: flex-end; justify-content: space-between; gap: var(--s3); margin-bottom: var(--s4); }
 .page-title { font-size: var(--t-display); font-weight: 600; line-height: 1.15; letter-spacing: -0.01em; color: var(--ink); }
 .clear-btn { padding: 8px 14px; font-size: var(--t-small); white-space: nowrap; }
 
-/* ---------- Scanner ---------- */
+
 .scanner-instruction { color: var(--ink-soft); margin-bottom: var(--s5); max-width: 36ch; }
 .upload-box {
   position: relative;
@@ -413,7 +407,7 @@ a.status-row:hover .status-head { color: var(--leaf); }
   font-size: var(--t-small);
 }
 
-/* ---------- My items ---------- */
+
 .filter-tabs { display: flex; gap: var(--s1); padding: var(--s1); margin-bottom: var(--s5); border-radius: var(--r-pill); background: var(--mist); }
 .filter-tab {
   flex: 1;
@@ -458,7 +452,7 @@ a.status-row:hover .status-head { color: var(--leaf); }
 .checkbox-wrap { display: flex; align-items: center; cursor: pointer; }
 .checkbox-wrap input { width: 26px; height: 26px; accent-color: var(--leaf); cursor: pointer; }
 
-/* ---------- Info page ---------- */
+
 .info-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s2); margin-bottom: var(--s5); }
 .info-cat-btn {
   min-height: 72px;
@@ -484,7 +478,7 @@ a.status-row:hover .status-head { color: var(--leaf); }
 .cat-detail-list li { font-size: var(--t-small); line-height: 1.7; }
 .cat-detail-list li::marker { color: var(--leaf); }
 
-/* ---------- Chatbot ---------- */
+
 .chatbot-wrap { padding: var(--s5) var(--s4) var(--s4); margin-bottom: var(--s5); border-radius: var(--r-lg); background: linear-gradient(180deg, var(--mist) 0%, var(--white) 70%); box-shadow: inset 0 0 0 1px var(--line); }
 .chatbot-title { font-size: var(--t-title); font-weight: 600; }
 .chatbot-subtitle { margin: var(--s1) 0 var(--s4); font-size: var(--t-small); color: var(--ink-soft); }
@@ -498,7 +492,7 @@ a.status-row:hover .status-head { color: var(--leaf); }
 .chat-input { flex: 1; min-width: 0; padding: 10px 14px; border: none; background: transparent; outline: none; }
 .chat-send-btn { padding: 10px 18px; }
 
-/* ---------- Reminders ---------- */
+
 .notif-header { display: flex; align-items: center; gap: var(--s3); max-width: var(--page); margin: 0 auto; padding: var(--s4) var(--s4) var(--s2); }
 .notif-header h1 { font-size: var(--t-display); font-weight: 600; line-height: 1.15; }
 .notif-back { width: 40px; height: 40px; display: grid; place-items: center; border-radius: var(--r-pill); background: var(--mist); color: var(--forest); }
@@ -530,7 +524,7 @@ a.status-row:hover .status-head { color: var(--leaf); }
 .notif-actions .notif-btn { padding: 7px 14px; }
 .notif-empty { padding: var(--s6) 0; color: var(--ink-soft); }
 
-/* ---------- Screen sizes ---------- */
+
 @media (min-width: 720px) {
   .home-band { padding-bottom: 104px; }
   .cat-grid { grid-template-columns: repeat(3, 1fr); }

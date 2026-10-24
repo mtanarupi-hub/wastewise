@@ -1,4 +1,3 @@
-// Home page: next HHW event, My items status, category buttons
 
 const HHW_EVENTS = [
     { date: '2026-03-15', place: 'Middlesex College, Edison' },

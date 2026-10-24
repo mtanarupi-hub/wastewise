@@ -5,12 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Info | WasteWise</title>
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" type="image/png" href="images/logo.png" />
+  <meta name="theme-color" content="#0b7a39" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="WasteWise" />
+  <link rel="manifest" href="/manifest.json" />
+  <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
 </head>
 <body>
 
   <header class="header">
     <div class="header-inner">
-      <div class="logo-mark">W</div>
+      <img src="images/logo.png" alt="WasteWise logo" class="logo-img" />
       <div class="logo-text">WasteWise</div>
     </div>
   </header>
@@ -18,7 +26,7 @@
   <section class="page-wrap">
     <h1 class="page-title" style="margin-bottom:16px">Disposal Guide</h1>
 
-    <!-- Category buttons -->
+
     <div class="info-grid">
       <button class="info-cat-btn" onclick="showCategory('rechargeable_batteries')">Batteries</button>
       <button class="info-cat-btn" onclick="showCategory('paint')">Paint</button>
@@ -31,7 +39,7 @@
       <button class="info-cat-btn" onclick="showCategory('paper_shredding')">Paper Shredding</button>
     </div>
 
-    <!-- Category detail panel -->
+
     <div class="cat-detail" id="cat-detail" style="display:none">
       <button class="back-btn" onclick="hideCategory()">Back to categories</button>
       <div class="cat-detail-name" id="cat-detail-name"></div>
@@ -44,7 +52,7 @@
       <ul class="cat-detail-list" id="cat-nuances"></ul>
     </div>
 
-    <!-- AI Chatbot -->
+
     <div class="chatbot-wrap" id="chatbot-wrap">
       <div class="chatbot-title">Ask a question</div>
       <div class="chatbot-subtitle">Ask anything about disposal rules in Middlesex County</div>
@@ -79,5 +87,6 @@
   </nav>
 
   <script src="js/info.js"></script>
+  <script>if ('serviceWorker' in navigator) navigator.serviceWorker.register('/sw.js');</script>
 </body>
 </html>

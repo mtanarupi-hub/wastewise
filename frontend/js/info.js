@@ -85,7 +85,6 @@ function hideCategory() {
   document.getElementById('chatbot-wrap').style.display = 'block';
 }
 
-// Chatbot
 document.getElementById('chat-send-btn').addEventListener('click', sendMessage);
 document.getElementById('chat-input').addEventListener('keydown', function(e) {
   if (e.key === 'Enter') sendMessage();
@@ -129,6 +128,5 @@ function removeThinking() {
   if (thinking) thinking.remove();
 }
 
-// Open a category directly from the home page (info.html?cat=paint)
 const startCat = new URLSearchParams(location.search).get('cat');
 if (startCat) showCategory(startCat);

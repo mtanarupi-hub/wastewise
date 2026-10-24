@@ -64,7 +64,6 @@ function openItemLoc(id) {
   if (item && item.locations && item.locations[0]) wwOpenLoc(item.locations[0]);
 }
 
-// Filter tabs
 document.querySelectorAll('.filter-tab').forEach(tab => {
   tab.addEventListener('click', function() {
     document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
@@ -74,7 +73,6 @@ document.querySelectorAll('.filter-tab').forEach(tab => {
   });
 });
 
-// Clear disposed
 document.getElementById('clear-done-btn').addEventListener('click', function() {
   const inventory = getInventory().filter(i => !i.disposed);
   saveInventory(inventory);
