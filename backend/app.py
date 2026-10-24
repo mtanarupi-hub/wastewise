@@ -14,24 +14,24 @@ FRONTEND_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "f
 app = Flask(__name__, static_folder=FRONTEND_DIR, static_url_path="")
 CORS(app)
 
-client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
+from google.genai import types
 
-MODELS = ["gemini-flash-latest", "gemini-flash-lite-latest"]
+client = genai.Client(
+    api_key=os.getenv("GEMINI_API_KEY"),
+    http_options=types.HttpOptions(timeout=25000),
+)
+
+MODELS = ["gemini-flash-lite-latest", "gemini-flash-latest"]
 
 
 def generate(contents):
-    """Call Gemini with retry on 503 and fallback to the lite model."""
     last_error = None
     for model in MODELS:
-        for attempt in range(3):
-            try:
-                return client.models.generate_content(model=model, contents=contents)
-            except Exception as e:
-                last_error = e
-                if "503" in str(e) or "UNAVAILABLE" in str(e):
-                    time.sleep(2 ** attempt)
-                    continue
-                raise
+        try:
+            return client.models.generate_content(model=model, contents=contents)
+        except Exception as e:
+            print(f"{model} failed:", e)
+            last_error = e
     raise last_error
 
 
