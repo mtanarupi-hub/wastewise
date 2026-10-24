@@ -6,16 +6,28 @@ const errorState = document.getElementById('error-state');
 const previewImg = document.getElementById('preview-img');
 const analyzingMsg = document.getElementById('analyzing-msg');
 
-// When user picks a photo
+// When user picks a photo: shrink it first so the server doesn't run out of memory
 photoInput.addEventListener('change', function(e) {
   const file = e.target.files[0];
   if (!file) return;
 
   const reader = new FileReader();
   reader.onload = function(ev) {
-    previewImg.src = ev.target.result;
-    showState('preview');
-    analyzeImage(ev.target.result);
+    const img = new Image();
+    img.onload = function() {
+      const MAX = 1024;
+      const scale = Math.min(1, MAX / Math.max(img.width, img.height));
+      const canvas = document.createElement('canvas');
+      canvas.width = Math.round(img.width * scale);
+      canvas.height = Math.round(img.height * scale);
+      canvas.getContext('2d').drawImage(img, 0, 0, canvas.width, canvas.height);
+      const small = canvas.toDataURL('image/jpeg', 0.8);
+
+      previewImg.src = small;
+      showState('preview');
+      analyzeImage(small);
+    };
+    img.src = ev.target.result;
   };
   reader.readAsDataURL(file);
 });
