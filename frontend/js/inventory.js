@@ -41,8 +41,8 @@ function renderInventory() {
       ${item.locations && item.locations.length > 0 ? `
         <div class="inv-location">
           <div class="inv-location-name">${item.locations[0].name}</div>
-          <div class="inv-location-address">${item.locations[0].address}</div>
-          <button class="directions-btn" onclick="openDirections('${item.locations[0].address}')">Get directions</button>
+          ${item.locations[0].address ? `<div class="inv-location-address">${item.locations[0].address}</div>` : ''}
+          <button class="directions-btn" onclick="openItemLoc(${item.id})">${wwLocLabel(item.locations[0])}</button>
         </div>
       ` : ''}
     </div>
@@ -59,9 +59,9 @@ function toggleDisposed(id) {
   }
 }
 
-function openDirections(address) {
-  const url = 'https://www.google.com/maps/dir/?api=1&destination=' + encodeURIComponent(address);
-  window.open(url, '_blank');
+function openItemLoc(id) {
+  const item = getInventory().find(i => i.id === id);
+  if (item && item.locations && item.locations[0]) wwOpenLoc(item.locations[0]);
 }
 
 // Filter tabs

@@ -67,7 +67,7 @@ function card(item) {
       <div class="notif-actions">
         <button class="notif-btn" data-action="done" data-id="${item.id}">Mark disposed</button>
         ${due ? `<button class="notif-btn secondary" data-action="snooze" data-id="${item.id}">Snooze 3 days</button>` : ''}
-        ${loc ? `<button class="notif-btn secondary" data-action="directions" data-id="${item.id}">Directions</button>` : ''}
+        ${loc ? `<button class="notif-btn secondary" data-action="directions" data-id="${item.id}">${wwLocLabel(loc)}</button>` : ''}
       </div>
     </div>`;
 }
@@ -101,9 +101,7 @@ document.addEventListener('click', e => {
   if (!item) return;
 
   if (btn.dataset.action === 'directions') {
-    const loc = item.locations[0];
-    window.open('https://www.google.com/maps/dir/?api=1&destination=' +
-      encodeURIComponent(loc.address || loc.name), '_blank');
+    wwOpenLoc(item.locations[0]);
     return;
   }
   if (btn.dataset.action === 'done') item.disposed = true;

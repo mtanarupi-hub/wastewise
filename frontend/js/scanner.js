@@ -71,11 +71,11 @@ function showResults(data) {
       card.className = 'location-card';
       card.innerHTML = `
         <div class="location-name">${loc.name}</div>
-        <div class="location-address">${loc.address}</div>
+        ${loc.address ? `<div class="location-address">${loc.address}</div>` : ''}
         <div class="location-hours">${loc.hours || ''}</div>
-        <button class="directions-btn">Get directions</button>
+        <button class="directions-btn">${wwLocLabel(loc)}</button>
       `;
-      card.querySelector('.directions-btn').onclick = () => openDirections(loc.address);
+      card.querySelector('.directions-btn').onclick = () => wwOpenLoc(loc);
       locContainer.appendChild(card);
     });
   } else {
@@ -89,12 +89,6 @@ function showResults(data) {
   };
 
   showState('results');
-}
-
-// Open Google Maps directions
-function openDirections(address) {
-  const url = 'https://www.google.com/maps/dir/?api=1&destination=' + encodeURIComponent(address);
-  window.open(url, '_blank');
 }
 
 // Save item to localStorage inventory

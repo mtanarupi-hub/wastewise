@@ -51,5 +51,34 @@ function wwSendReminder() {
   localStorage.setItem(WW_LAST_KEY, today);
 }
 
+// ---- Location links (Middlesex County only) ----
+// Street-address locations open Google Maps; "find a box/program" locations open their official page.
+function wwLocUrl(loc) {
+  if (loc.link) return loc.link;
+  return 'https://www.google.com/maps/dir/?api=1&destination=' + encodeURIComponent(loc.address || loc.name);
+}
+function wwLocLabel(loc) {
+  return loc.link ? 'Find locations' : 'Get directions';
+}
+function wwOpenLoc(loc) {
+  window.open(wwLocUrl(loc), '_blank');
+}
+
+// Items saved before the location fix still hold old out-of-county addresses.
+// Refresh them from the backend using category_key.
+(async function wwRefreshOldLocations() {
+  const inv = wwGetInventory();
+  const stale = inv.filter(i => i.category_key && i.locations && i.locations.some(l => 'lat' in l));
+  if (!stale.length) return;
+  try {
+    const res = await fetch('http://127.0.0.1:5000/categories');
+    const cats = (await res.json()).categories;
+    stale.forEach(i => { if (cats[i.category_key]) i.locations = cats[i.category_key].locations; });
+    wwSaveInventory(inv);
+    if (typeof renderInventory === 'function') renderInventory();
+    if (typeof renderList === 'function') renderList();
+  } catch (e) { /* backend offline — try next load */ }
+})();
+
 wwUpdateBell();
 wwSendReminder();

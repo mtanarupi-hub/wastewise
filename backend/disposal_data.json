@@ -7,14 +7,9 @@
       "not_accepted": ["Alkaline batteries — regular trash is OK"],
       "nuances": ["Prevents fires — never throw in trash", "Tape each terminal before transport"],
       "locations": [
-        {
-          "name": "MCIA HHW Drop-Off Event",
-          "address": "290 Davidson Ave, Somerset, NJ 08873",
-          "lat": 40.5165,
-          "lng": -74.4815,
-          "hours": "Check mcia.org for upcoming event dates",
-          "residents_only": true
-        }
+        { "name": "HHW Event — Middlesex College", "address": "2600 Woodbridge Ave, Edison, NJ 08837", "hours": "Sun Nov 15, 2026, 8 am–2 pm (also held Mar 15)", "residents_only": true },
+        { "name": "HHW Event — County Public Works", "address": "97 Apple Orchard Ln, North Brunswick, NJ 08902", "hours": "Sat May 16, 2026, 8 am–2 pm", "residents_only": true },
+        { "name": "HHW Event — County Public Works", "address": "750 Jernee Mill Rd, Sayreville, NJ 08872", "hours": "Sat Sept 19, 2026, 8 am–2 pm", "residents_only": true }
       ]
     },
     "paint": {
@@ -24,14 +19,17 @@
       "not_accepted": ["Empty containers", "Dried-out latex paint", "Contractor or business material"],
       "nuances": ["All items must be labeled", "Dried latex paint is OK for regular trash"],
       "locations": [
-        {
-          "name": "MCIA HHW Drop-Off Event",
-          "address": "290 Davidson Ave, Somerset, NJ 08873",
-          "lat": 40.5165,
-          "lng": -74.4815,
-          "hours": "Check mcia.org for upcoming event dates",
-          "residents_only": true
-        }
+        { "name": "Sayreville Recycling Center", "address": "3750 Bordentown Ave, Sayreville, NJ 08872", "hours": "1st Friday of the month, 8 am–12 pm", "residents_only": true },
+        { "name": "East Brunswick Recycling Center", "address": "357 Dunhams Corner Rd, East Brunswick, NJ 08816", "hours": "1st Saturday, 8 am–12 pm", "residents_only": true },
+        { "name": "Middlesex Borough Recycling Center", "address": "1200 Mountain Ave, Middlesex, NJ 08846", "hours": "1st Saturday, 8 am–12 pm", "residents_only": true },
+        { "name": "New Brunswick Public Works", "address": "400 Jersey Ave, New Brunswick, NJ 08901", "hours": "2nd Saturday, 8 am–12 pm", "residents_only": true },
+        { "name": "Old Bridge Recycling Center", "address": "1 Old Bridge Plaza, Old Bridge, NJ 08857", "hours": "2nd Saturday, 8 am–12 pm", "residents_only": true },
+        { "name": "Dunellen Public Works", "address": "235 Hall St, Dunellen, NJ 08812", "hours": "2nd Saturday, 8 am–12 pm", "residents_only": true },
+        { "name": "South Plainfield Recycling Center", "address": "882 Kenneth Ave, South Plainfield, NJ 07080", "hours": "3rd Saturday, 8 am–12 pm", "residents_only": true },
+        { "name": "Monroe Public Works", "address": "76 Gravel Hill-Spotswood Rd, Monroe Township, NJ 08831", "hours": "3rd Saturday, 8 am–12 pm", "residents_only": true },
+        { "name": "Helmetta Borough Hall", "address": "51 Main St, Helmetta, NJ 08828", "hours": "3rd Saturday, 8 am–12 pm", "residents_only": true },
+        { "name": "Woodbridge Public Works", "address": "225 Smith St, Keasbey, NJ 08832", "hours": "4th Saturday, 8 am–12 pm", "residents_only": true },
+        { "name": "South Brunswick Recycling Center", "address": "540 Ridge Rd, Monmouth Junction, NJ 08852", "hours": "4th Saturday, 8 am–12 pm", "residents_only": true }
       ]
     },
     "tires": {
@@ -41,14 +39,10 @@
       "not_accepted": ["Oversized tires", "Business tires"],
       "nuances": ["4 tires per household per month maximum", "Must see attendant before unloading", "Proof of residency may be required"],
       "locations": [
-        {
-          "name": "MCIA Tire Drop-Off",
-          "address": "290 Davidson Ave, Somerset, NJ 08873",
-          "lat": 40.5165,
-          "lng": -74.4815,
-          "hours": "Check mcia.org for upcoming event dates",
-          "residents_only": true
-        }
+        { "name": "East Brunswick Recycling Center", "address": "357 Dunhams Corner Rd, East Brunswick, NJ 08816", "hours": "Mon–Sat 7:30 am–3:30 pm", "residents_only": true },
+        { "name": "Woodbridge Public Works", "address": "225 Smith St, Keasbey, NJ 08832", "hours": "Mon–Sat 8 am–2 pm", "residents_only": true },
+        { "name": "Sayreville Recycling Center", "address": "3750 Bordentown Ave, Sayreville, NJ 08872", "hours": "Mon & Fri 7:30 am–1 pm; 1st & 3rd Sat 7 am–12 pm", "residents_only": true },
+        { "name": "Plainsboro Conservation Center", "address": "Grovers Mill Rd, Plainsboro, NJ 08536", "hours": "Apr–Nov: Mon & Thu 5:30–7:30 pm, Sat 10 am–5 pm; Dec–Mar: Sat 10 am–2 pm", "residents_only": true }
       ]
     },
     "medicine": {
@@ -58,14 +52,7 @@
       "not_accepted": ["Needles and syringes — separate sharps disposal required"],
       "nuances": ["Flushing medications contaminates waterways", "Many Middlesex County pharmacies and police stations have drop boxes"],
       "locations": [
-        {
-          "name": "Middlesex County Drug Take-Back Locations",
-          "address": "Multiple locations — visit middlesexcountynj.gov for full list",
-          "lat": 40.5018,
-          "lng": -74.4454,
-          "hours": "Varies by location",
-          "residents_only": false
-        }
+        { "name": "NJ Project Medicine Drop — Middlesex boxes", "link": "https://njconsumeraffairs.gov/meddrop/Pages/Locations.aspx", "hours": "Mostly police stations; hours vary by location", "residents_only": false }
       ]
     },
     "household_hazardous_waste": {
@@ -75,14 +62,9 @@
       "not_accepted": ["Appliances", "Furniture", "Computers", "Electronics", "Empty containers", "Explosives", "Medical waste", "Smoke detectors", "TVs", "Tires", "Containers over 10 gallons"],
       "nuances": ["Remain in your vehicle at events", "Asbestos must be pre-registered and double bagged", "Alkaline batteries OK for regular trash"],
       "locations": [
-        {
-          "name": "MCIA HHW Drop-Off Event",
-          "address": "290 Davidson Ave, Somerset, NJ 08873",
-          "lat": 40.5165,
-          "lng": -74.4815,
-          "hours": "Check mcia.org for upcoming event dates",
-          "residents_only": true
-        }
+        { "name": "HHW Event — Middlesex College", "address": "2600 Woodbridge Ave, Edison, NJ 08837", "hours": "Sun Nov 15, 2026, 8 am–2 pm (also held Mar 15)", "residents_only": true },
+        { "name": "HHW Event — County Public Works", "address": "97 Apple Orchard Ln, North Brunswick, NJ 08902", "hours": "Sat May 16, 2026, 8 am–2 pm", "residents_only": true },
+        { "name": "HHW Event — County Public Works", "address": "750 Jernee Mill Rd, Sayreville, NJ 08872", "hours": "Sat Sept 19, 2026, 8 am–2 pm", "residents_only": true }
       ]
     },
     "electronics": {
@@ -92,14 +74,7 @@
       "not_accepted": [],
       "nuances": ["Required by NJ State Law", "Most municipalities have their own program", "Check with your town's public works department"],
       "locations": [
-        {
-          "name": "Contact Your Local Municipality",
-          "address": "Visit middlesexcountynj.gov for your town's program",
-          "lat": 40.5018,
-          "lng": -74.4454,
-          "hours": "Varies by municipality",
-          "residents_only": true
-        }
+        { "name": "Your Town's E-Waste Program", "link": "https://www.middlesexcountynj.gov/recycle", "hours": "Varies by town — check your public works department", "residents_only": true }
       ]
     },
     "textiles": {
@@ -109,14 +84,7 @@
       "not_accepted": ["Wet or moldy items", "Items smaller than 1ft x 1ft"],
       "nuances": ["Required by law for residents AND businesses", "Clothing does not need to be in perfect condition", "Hundreds of donation boxes across Middlesex County"],
       "locations": [
-        {
-          "name": "Donation Boxes Across Middlesex County",
-          "address": "Hundreds of locations — check Planet Aid, Goodwill, and local churches",
-          "lat": 40.5018,
-          "lng": -74.4454,
-          "hours": "Available 24/7 at most locations",
-          "residents_only": false
-        }
+        { "name": "Textile Donation Boxes & Pickup", "link": "https://www.middlesexcountynj.gov/recycle", "hours": "Boxes across the county, most open 24/7", "residents_only": false }
       ]
     },
     "cooking_oil": {
@@ -126,14 +94,11 @@
       "not_accepted": ["Shortening", "Coconut oil", "Lard", "Motor oil"],
       "nuances": ["Proof of residency required", "No businesses", "Must see attendant before unloading"],
       "locations": [
-        {
-          "name": "MCIA Cooking Oil Drop-Off",
-          "address": "290 Davidson Ave, Somerset, NJ 08873",
-          "lat": 40.5165,
-          "lng": -74.4815,
-          "hours": "Check mcia.org for upcoming event dates",
-          "residents_only": true
-        }
+        { "name": "East Brunswick Recycling Center", "address": "357 Dunhams Corner Rd, East Brunswick, NJ 08816", "hours": "Saturdays 8 am–12 pm", "residents_only": true },
+        { "name": "Old Bridge Recycling Center", "address": "1 Old Bridge Plaza, Old Bridge, NJ 08857", "hours": "Saturdays 8 am–12 pm", "residents_only": true },
+        { "name": "Woodbridge Public Works", "address": "225 Smith St, Keasbey, NJ 08832", "hours": "Saturdays 8 am–12 pm", "residents_only": true },
+        { "name": "Monroe Public Works", "address": "76 Gravel Hill-Spotswood Rd, Monroe Township, NJ 08831", "hours": "Fridays 8 am–12 pm", "residents_only": true },
+        { "name": "South Plainfield Recycling Center", "address": "882 Kenneth Ave, South Plainfield, NJ 07080", "hours": "Fridays 8 am–12 pm", "residents_only": true }
       ]
     },
     "paper_shredding": {
@@ -143,14 +108,7 @@
       "not_accepted": ["Plastic binders", "Sheet protectors", "Newspapers", "Magazines", "Hardcover books", "Junk mail", "Photos", "X-rays", "CDs", "Shredded paper"],
       "nuances": ["Stay in your vehicle during the visit", "Containers will be returned to you", "Paper clips and staples can stay in"],
       "locations": [
-        {
-          "name": "MCIA Paper Shredding Event",
-          "address": "290 Davidson Ave, Somerset, NJ 08873",
-          "lat": 40.5165,
-          "lng": -74.4815,
-          "hours": "Check mcia.org for upcoming event dates",
-          "residents_only": true
-        }
+        { "name": "County Shredding Events", "link": "https://www.middlesexcountynj.gov/recycle", "hours": "Several events a year — see the county events calendar", "residents_only": true }
       ]
     }
   }
