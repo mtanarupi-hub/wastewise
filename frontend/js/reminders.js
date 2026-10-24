@@ -77,7 +77,7 @@ function wwOpenLoc(loc) {
     wwSaveInventory(inv);
     if (typeof renderInventory === 'function') renderInventory();
     if (typeof renderList === 'function') renderList();
-  } catch (e) { /* backend offline — try next load */ }
+  } catch (e) { /* backend offline, try next load */ }
 })();
 
 wwUpdateBell();

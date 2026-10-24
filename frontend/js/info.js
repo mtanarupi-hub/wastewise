@@ -4,7 +4,7 @@ const categoryData = {
     rules: "Must go to HHW drop-off event. Never put in trash or curbside bin. Prevents fires.",
     accepted: ["Rechargeable AA/AAA batteries", "Button cell batteries", "Lithium batteries", "Power tool batteries", "Phone and laptop batteries"],
     not_accepted: ["Alkaline batteries (regular trash is OK)"],
-    nuances: ["Tape each terminal or bag each battery individually before transport", "Found in phones, laptops, power tools, cameras", "DO NOT throw in trash — fire hazard"]
+    nuances: ["Tape each terminal or bag each battery individually before transport", "Found in phones, laptops, power tools, cameras", "DO NOT throw in trash, fire hazard"]
   },
   paint: {
     name: "Paint & Stains",
@@ -15,9 +15,9 @@ const categoryData = {
   },
   medicine: {
     name: "Medicine & Medications",
-    rules: "Never flush medications — it contaminates waterways. Use designated drug take-back locations.",
+    rules: "Never flush medications. It contaminates waterways. Use designated drug take-back locations.",
     accepted: ["Prescription medications", "Over the counter medications", "Vitamins and supplements"],
-    not_accepted: ["Needles and syringes (use sharps disposal)", "Some locations only accept pills — call ahead"],
+    not_accepted: ["Needles and syringes (use sharps disposal)", "Some locations only accept pills, so call ahead"],
     nuances: ["Flushing medications pollutes Middlesex County waterways", "Many pharmacies and police stations have drop boxes", "Sharps require separate disposal containers"]
   },
   household_hazardous_waste: {
@@ -25,28 +25,28 @@ const categoryData = {
     rules: "Bring to HHW events only. Never pour down drain or on ground. Put materials in trunk, stay in vehicle at events.",
     accepted: ["Adhesives", "Aerosol cans", "Antifreeze", "Brake fluid", "Car batteries", "Cleaners", "Fire extinguishers", "Fluorescent bulbs (unbroken)", "Gasoline", "Kerosene", "Motor oil", "Paint and paint thinner", "Pesticides", "Pool chemicals", "Propane tanks", "Thermometers", "Thermostats"],
     not_accepted: ["Appliances and furniture", "Computers and electronics", "Empty containers", "Explosives", "Medical waste", "Smoke detectors", "Tires", "Containers over 10 gallons"],
-    nuances: ["Materials must go in trunk — cannot roll or spill", "Remain in your vehicle at all times during events", "Asbestos: must pre-register, must be double bagged", "Alkaline batteries are OK for regular trash"]
+    nuances: ["Materials must go in trunk so they can't roll or spill", "Remain in your vehicle at all times during events", "Asbestos: must pre-register, must be double bagged", "Alkaline batteries are OK for regular trash"]
   },
   electronics: {
     name: "Electronics (E-Waste)",
     rules: "Required by NJ State Law to recycle. Contact your local public works department for your town's program.",
     accepted: ["Computers", "Monitors", "Televisions", "Printers", "Fax machines", "Phones", "Tablets"],
     not_accepted: [],
-    nuances: ["Recycling electronics is required by NJ State Law", "Most municipalities have their own program — check with your town", "NJDEP has a list of free drop-off locations for towns without programs"]
+    nuances: ["Recycling electronics is required by NJ State Law", "Most municipalities have their own program, so check with your town", "NJDEP has a list of free drop-off locations for towns without programs"]
   },
   tires: {
     name: "Tires",
     rules: "Maximum 4 tires per household per month. Residents only. Must see attendant before unloading.",
     accepted: ["Automobile tires", "Light truck tires"],
     not_accepted: ["Oversized tires", "Business tires"],
-    nuances: ["4 tires per household per month — maximum", "No businesses", "Must see attendant before unloading your vehicle", "Proof of residency may be required"]
+    nuances: ["Maximum of 4 tires per household per month", "No businesses", "Must see attendant before unloading your vehicle", "Proof of residency may be required"]
   },
   textiles: {
     name: "Textiles & Clothing",
     rules: "Required by law to recycle. Must be clean and dry. Do NOT put in curbside recycling bin. Use donation boxes.",
     accepted: ["Clean dry clothing", "Fabric items at least 1ft x 1ft", "Worn or imperfect clothing"],
     not_accepted: ["Wet or moldy items", "Items smaller than 1ft x 1ft"],
-    nuances: ["Every resident AND business must recycle textiles by law", "Do NOT put in curbside recycling", "Hundreds of donation boxes across Middlesex County", "Worn clothing is still recyclable — can be made into rags or padding"]
+    nuances: ["Every resident AND business must recycle textiles by law", "Do NOT put in curbside recycling", "Hundreds of donation boxes across Middlesex County", "Worn clothing is still recyclable and can be made into rags or padding"]
   },
   cooking_oil: {
     name: "Cooking Oil",
@@ -60,7 +60,7 @@ const categoryData = {
     rules: "Residential personal paper only. No plastic bags. Bring in a box or crate. Max 5 file boxes or 100 lbs.",
     accepted: ["Personal documents", "Tax documents", "Bank statements", "Paper with paper clips and staples OK"],
     not_accepted: ["Business documents", "Plastic binders", "Sheet protectors", "Newspapers", "Magazines", "Hardcover books", "Junk mail", "Photos", "X-rays", "CDs", "Shredded paper"],
-    nuances: ["Shredding done on-site — you can watch", "Stay in your vehicle during the visit", "No plastic bags — box or crate only, containers returned to you", "Paper clips and staples can stay in"]
+    nuances: ["Shredding done on-site and you can watch", "Stay in your vehicle during the visit", "No plastic bags. Box or crate only, containers returned to you", "Paper clips and staples can stay in"]
   }
 };
 
