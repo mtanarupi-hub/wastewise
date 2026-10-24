@@ -128,3 +128,7 @@ function removeThinking() {
   const thinking = document.querySelector('.chat-bubble.thinking');
   if (thinking) thinking.remove();
 }
+
+// Open a category directly from the home page (info.html?cat=paint)
+const startCat = new URLSearchParams(location.search).get('cat');
+if (startCat) showCategory(startCat);
