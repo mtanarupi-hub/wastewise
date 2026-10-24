@@ -10,7 +10,8 @@ from google import genai
 
 load_dotenv()
 
-app = Flask(__name__)
+FRONTEND_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "frontend")
+app = Flask(__name__, static_folder=FRONTEND_DIR, static_url_path="")
 CORS(app)
 
 client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
@@ -207,10 +208,15 @@ def ask():
         return jsonify({"answer": "Sorry, something went wrong. Please try again."}), 500
 
 
+@app.route("/")
+def home():
+    return app.send_static_file("index.html")
+
+
 @app.route("/categories", methods=["GET"])
 def categories():
     return jsonify(DISPOSAL_DATA)
 
 
 if __name__ == "__main__":
-    app.run(debug=True, port=5000)
+    app.run(debug=True, host="0.0.0.0", port=int(os.getenv("PORT", 5000)))

@@ -71,7 +71,7 @@ function wwOpenLoc(loc) {
   const stale = inv.filter(i => i.category_key && i.locations && i.locations.some(l => 'lat' in l));
   if (!stale.length) return;
   try {
-    const res = await fetch('http://127.0.0.1:5000/categories');
+    const res = await fetch('/categories');
     const cats = (await res.json()).categories;
     stale.forEach(i => { if (cats[i.category_key]) i.locations = cats[i.category_key].locations; });
     wwSaveInventory(inv);
